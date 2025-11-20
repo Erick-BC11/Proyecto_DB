@@ -55,7 +55,7 @@ public class MainApp extends JFrame {
         JButton btn = new JButton(text);
         btn.setAlignmentX(Component.LEFT_ALIGNMENT);
         btn.setMaximumSize(new Dimension(200, 40));
-        btn.setBackground(estilos.SIDEBAR_COLOR); // Referencia actualizada
+        btn.setBackground(estilos.SIDEBAR_COLOR);
         btn.setForeground(Color.GRAY);
         btn.setFocusPainted(false);
         btn.setBorderPainted(false);
