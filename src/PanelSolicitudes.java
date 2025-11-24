@@ -4,7 +4,7 @@ import java.awt.*;
 import java.sql.*;
 
 public class PanelSolicitudes extends JPanel {
-    //
+    //ajidj
     private JTable table;
     private DefaultTableModel tableModel;
 
