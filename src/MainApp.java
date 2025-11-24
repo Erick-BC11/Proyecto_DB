@@ -15,8 +15,7 @@ public class MainApp extends JFrame {
 
         // --- SIDEBAR (Izquierda) ---
         JPanel sidebar = new JPanel();
-        // AQUÍ: Referencia a tu nueva clase
-        sidebar.setBackground(estilos.SIDEBAR_COLOR);
+        sidebar.setBackground(estilos.SIDEBAR_COLOR); // Usa tu color original
         sidebar.setPreferredSize(new Dimension(200, getHeight()));
         sidebar.setLayout(new BoxLayout(sidebar, BoxLayout.Y_AXIS));
 
@@ -38,15 +37,13 @@ public class MainApp extends JFrame {
         // --- CONTENIDO PRINCIPAL (Centro) ---
         cardLayout = new CardLayout();
         contentPanel = new JPanel(cardLayout);
-        contentPanel.setBackground(estilos.BG_COLOR); // Referencia actualizada
+        contentPanel.setBackground(estilos.BG_COLOR); // Usa tu color de fondo original
 
-        // Agregamos los paneles
+        // --- AQUÍ CONECTAMOS TUS PANELES ---
+        // Se respetan las clases que creamos, pero dentro de tu estructura visual
         contentPanel.add(new PanelCliente(), "CUSTOMERS");
-
-        JPanel pnlApps = new JPanel();
-        pnlApps.setBackground(estilos.BG_COLOR);
-        pnlApps.add(new JLabel("Módulo de Solicitudes (En construcción)"));
-        contentPanel.add(pnlApps, "APPLICATIONS");
+        contentPanel.add(new PanelSolicitudes(), "APPLICATIONS");
+        contentPanel.add(new PanelAdmin(), "SETTINGS");
 
         add(contentPanel, BorderLayout.CENTER);
     }
@@ -55,6 +52,8 @@ public class MainApp extends JFrame {
         JButton btn = new JButton(text);
         btn.setAlignmentX(Component.LEFT_ALIGNMENT);
         btn.setMaximumSize(new Dimension(200, 40));
+
+        // Estilos originales del botón sidebar
         btn.setBackground(estilos.SIDEBAR_COLOR);
         btn.setForeground(Color.GRAY);
         btn.setFocusPainted(false);
@@ -63,6 +62,7 @@ public class MainApp extends JFrame {
         btn.setHorizontalAlignment(SwingConstants.LEFT);
         btn.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 0));
 
+        // Hover original que tenías definido
         btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn.setForeground(Color.WHITE);
@@ -78,6 +78,7 @@ public class MainApp extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
+            // NO agregamos UIManager para no romper tus estilos
             new MainApp().setVisible(true);
         });
     }

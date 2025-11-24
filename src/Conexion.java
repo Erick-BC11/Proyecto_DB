@@ -5,7 +5,7 @@ public class Conexion {
         // Credenciales según tu solicitud
         private static final String URL = "jdbc:postgresql://localhost:5432/Insurance_Applications";
         private static final String USER = "developer";
-        private static final String PASSWORD = "developer";
+        private static final String PASSWORD = "Windows2016";
 
         public static Connection getConnection() {
             Connection conn = null;
