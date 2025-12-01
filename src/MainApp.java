@@ -31,6 +31,7 @@ public class MainApp extends JFrame {
         addMenuButton(sidebar, "Clientes", "CUSTOMERS");
         addMenuButton(sidebar, "Solicitudes", "APPLICATIONS");
         addMenuButton(sidebar, "Configuración", "SETTINGS");
+        addMenuButton(sidebar, "Informes", "REPORTS");
 
         add(sidebar, BorderLayout.WEST);
 
@@ -44,6 +45,7 @@ public class MainApp extends JFrame {
         contentPanel.add(new PanelCliente(), "CUSTOMERS");
         contentPanel.add(new PanelSolicitudes(), "APPLICATIONS");
         contentPanel.add(new PanelAdmin(), "SETTINGS");
+        contentPanel.add(new PanelInformes(), "REPORTS");
 
         add(contentPanel, BorderLayout.CENTER);
     }
