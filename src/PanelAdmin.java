@@ -37,14 +37,16 @@ class PanelCRUDPolizas extends JPanel {
 
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JButton btnAdd = estilos.createStyledButton("Nueva Póliza");
-        JButton btnDel = estilos.createStyledButton("Eliminar Selecc.");
+        //JButton btnDel = estilos.createStyledButton("Eliminar Selecc.");
         JButton btnRef = estilos.createStyledButton("Recargar");
 
         btnAdd.addActionListener(e -> showDialog());
-        btnDel.addActionListener(e -> deleteSelected());
+       // btnDel.addActionListener(e -> deleteSelected());
         btnRef.addActionListener(e -> loadData());
 
-        btnPanel.add(btnRef); btnPanel.add(btnDel); btnPanel.add(btnAdd);
+        btnPanel.add(btnRef);
+        //btnPanel.add(btnDel);
+        btnPanel.add(btnAdd);
 
         add(new JScrollPane(table), BorderLayout.CENTER);
         add(btnPanel, BorderLayout.SOUTH);
